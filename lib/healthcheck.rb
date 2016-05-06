@@ -3,7 +3,6 @@ require "healthcheck/middleware"
 require "healthcheck/railtie"
 
 module Healthcheck
-
   def self.add(&block)
     @healthcheck = block
   end
@@ -16,5 +15,4 @@ module Healthcheck
     return true if @healthcheck.nil?
     @healthcheck.call
   end
-
 end

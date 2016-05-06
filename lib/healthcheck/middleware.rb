@@ -1,19 +1,19 @@
-class Healthcheck::Middleware
+module Healthcheck
+  class Middleware
+    def initialize(app)
+      @app = app
+    end
 
-  def initialize(app)
-    @app = app
-  end
-
-  def call(env)
-    if env['PATH_INFO'] == '/healthcheck'
-      if Healthcheck.passed?
-        [200, {}, ['OK']]
+    def call(env)
+      if env["PATH_INFO"] == "/healthcheck"
+        if Healthcheck.passed?
+          [200, {}, ["OK"]]
+        else
+          [500, {}, ["Healthcheck Failed"]]
+        end
       else
-        [500, {}, ['Healthcheck Failed']]
+        @app.call(env)
       end
-    else
-      @app.call(env)
     end
   end
-
 end

@@ -1,7 +1,6 @@
 require "spec_helper"
 
 describe Healthcheck do
-
   before do
     described_class.remove
   end
@@ -40,11 +39,10 @@ describe Healthcheck do
   end
 
   it "does passes other paths through to app" do
-      app = double call: nil
-      mw = described_class::Middleware.new(app)
-      env = {"PATH_INFO" => "/anotherpath"}
-      mw.call env
-      expect(app).to have_received(:call).with(env)
+    app = double call: nil
+    mw = described_class::Middleware.new(app)
+    env = { "PATH_INFO" => "/anotherpath" }
+    mw.call env
+    expect(app).to have_received(:call).with(env)
   end
-
 end
