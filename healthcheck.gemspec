@@ -10,7 +10,6 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Simple healthcheck Rack middleware; supports Rails OOTB}
   spec.homepage      = "https://github.com/Alliants/healthcheck"
-  spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
