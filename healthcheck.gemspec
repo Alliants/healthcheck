@@ -5,7 +5,7 @@ require "healthcheck/version"
 Gem::Specification.new do |spec|
   spec.name          = "healthcheck"
   spec.version       = Healthcheck::VERSION
-  spec.authors       = ["Asfand Qazi"]
+  spec.authors       = ["Asfand Qazi", "Lee-Jon Ball"]
   spec.email         = ["ayqazi@gmail.com"]
 
   spec.summary       = %q{Simple healthcheck Rack middleware; supports Rails OOTB}
